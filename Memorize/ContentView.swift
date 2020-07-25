@@ -7,7 +7,8 @@
 //
 
 import SwiftUI
-
+/*Model View ViewModel */
+/*view TOTALLY UI DEPENDENT */
 struct ContentView: View {
     var body: some View {
         HStack {
@@ -45,6 +46,10 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
+
+
+
+
 /*
  Lecture 2: MVVM and the Swift Type System
  Theory:
@@ -72,17 +77,17 @@ struct ContentView_Previews: PreviewProvider {
     Sometimes we dont care about the type. Ex. An Array.
     Many other languages have generics.
         General structure of an array
- */
+ 
 struct Array<Element> {
     //...
     func append(_ element: Element) { /*...*/ }
 }
-/*
+
     the type here is 'Element'... this is unspecific.. thus a "Dont Care" type.
     
- */
+ 
 var a = Array<Int>()
-/*
+
 a.append(/*element: Int */ 22)
     Basically, here the coder must choose what variable to use when actually using the Element.
     Specifying element -> int
@@ -91,4 +96,17 @@ a.append(/*element: Int */ 22)
     (Int, Int)  -> Bool          //takes two ints, returns a Boolean
     (Double)    -> Void          //Takes a double, returns nothing
     ()          -> Array<String> //Takes nothing, returns a String[]
+ 
+var foo: (Double) -> Void //variable foo takes type Double and puts nothing.
+func doSomething(what: () -> Bool) //what takes nothing, returns bool. Is a function
+
+ var operation: (Double) -> Double
+ func square(operand: Double) ->Double{
+     return operand * operand
+ }
+ let result = operation(4) //result == 16.
+ 
+ 
  */
+
+
